@@ -14,10 +14,20 @@ signupForm.addEventListener('submit', (e) => {
 
   // purpose: sign up the user
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    console.log(cred.user);
+
     // this is used to close the signup modal & reset the form
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();
     signupForm.reset();
   });
 });
+
+
+// This is the log out method
+    const logout = document.querySelector('#logout');
+    logout.addEventListener('click', (e) => {
+      e.preventDefault();
+      auth.signOut().then(() => {
+        console.log('User has signed out');
+      })
+    });
