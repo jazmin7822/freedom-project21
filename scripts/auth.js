@@ -1,3 +1,13 @@
+//This code checks whether or not the user is logged in or logged out
+    auth.onAuthStateChanged(user => {
+  if (user) {
+    console.log('User is logged in: ', user);
+  } else {
+    console.log('User is logged out');
+  }
+})
+
+
 //the purpose of this is to create a sign up form
 
 
@@ -27,9 +37,7 @@ signupForm.addEventListener('submit', (e) => {
   const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
   e.preventDefault();
-  auth.signOut().then(() => {
-    console.log('user signed out');
-  })
+  auth.signOut();
 });
 
 // login
@@ -43,8 +51,8 @@ loginForm.addEventListener('submit', (e) => {
 
   // log the user in
   auth.signInWithEmailAndPassword(email, password).then((cred) => {
-    console.log(cred.user);
-    // close the signup modal & reset form
+
+    // closes the signup modal & resets the form
     const modal = document.querySelector('#modal-login');
     M.Modal.getInstance(modal).close();
     loginForm.reset();
