@@ -32,7 +32,9 @@ const setupGuides = (data) => {
     });
     guideList.innerHTML = html
   } else {
-    guideList.innerHTML = '<h5 class="center-align">Login to view your progress</h5>';
+    guideList.innerHTML = '<h4 class="center-align">Login to log the amount of water you drink each day</h4>';
+    //Added image
+    <img src="img/water-glasses.jpg" style="width: 180px; margin-top: 10px;">
   }
 
 
