@@ -1,3 +1,4 @@
+
 const guideList = document.querySelector('.guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
@@ -31,7 +32,7 @@ const setupGuides = (data) => {
     });
     guideList.innerHTML = html
   } else {
-    guideList.innerHTML = '<h5 class="center-align">Login to view more information</h5>';
+    guideList.innerHTML = '<h5 class="center-align">Login to view guides</h5>';
   }
 
 
