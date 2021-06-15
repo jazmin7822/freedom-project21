@@ -1,11 +1,26 @@
-//This code checks whether or not the user is logged in or logged out
-    auth.onAuthStateChanged(user => {
+
+//get data retrieves those documents
+auth.onAuthStateChanged(user => {
   if (user) {
-    console.log('User is logged in: ', user);
+    db.collection('guides').get().then(snapshot => {
+      setupGuides(snapshot.docs);
+      setupUI(user);
+    });
   } else {
-    console.log('User is logged out');
+    setupUI();
+    setupGuides([]);
   }
 })
+
+
+//This code checks whether or not the user is logged in or logged out
+//     auth.onAuthStateChanged(user => {
+//   if (user) {
+//     console.log('User is logged in: ', user);
+//   } else {
+//     console.log('User is logged out');
+//   }
+// })
 
 
 //the purpose of this is to create a sign up form
