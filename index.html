@@ -81,18 +81,18 @@
     </div>
   </div>
 
-  <!-- CREATE GUIDE MODAL -->
+  <!-- User can log their day and cups of water drank -->
   <div id="modal-create" class="modal">
     <div class="modal-content">
       <h4>Input what day it is and the amount of water you drank today</h4><br />
       <form id="create-form">
         <div class="input-field">
           <input type="text" id="title" required>
-          <label for="title">Guide Title</label>
+          <label for="title">Day of the Week</label>
         </div>
         <div class="input-field">
           <textarea id="content" class="materialize-textarea" required></textarea>
-          <label for="content">Guide Content</label>
+          <label for="content">Cups of Water</label>
         </div>
         <button class="btn teal lighten-2 z-depth-0">Create</button>
       </form>
@@ -112,7 +112,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
 
       <script>
-
+  //Firebase CDN (content delivery network)
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         var firebaseConfig = {
@@ -133,6 +133,7 @@
     // update firestore settings
     db.settings({ timestampsInSnapshots: true });
   </script>
+
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="scripts/auth.js"></script>

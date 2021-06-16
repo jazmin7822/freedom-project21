@@ -1,4 +1,4 @@
-// listen for auth status changes
+// listen for authentication status changes
 auth.onAuthStateChanged(user => {
   if (user) {
     db.collection('guides').get().then(snapshot => {
@@ -11,16 +11,16 @@ auth.onAuthStateChanged(user => {
   }
 })
 
-// signup
+// this is how the user signs ups
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // get user info
+  //users info is received
   const email = signupForm['signup-email'].value;
   const password = signupForm['signup-password'].value;
 
-  // sign up the user
+  // The user signs up with an email and password
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
     // close the signup modal & reset form
     const modal = document.querySelector('#modal-signup');
@@ -29,25 +29,25 @@ signupForm.addEventListener('submit', (e) => {
   });
 });
 
-// logout
+// The user logs out
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
   e.preventDefault();
   auth.signOut();
 });
 
-// login
+// The user logs in
 const loginForm = document.querySelector('#login-form');
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // get user info
+  // We get the info of the user
   const email = loginForm['login-email'].value;
   const password = loginForm['login-password'].value;
 
-  // log the user in
+  // Logs the user in
   auth.signInWithEmailAndPassword(email, password).then((cred) => {
-    // close the signup modal & reset form
+    // closes the signup modal & reset form
     const modal = document.querySelector('#modal-login');
     M.Modal.getInstance(modal).close();
     loginForm.reset();
