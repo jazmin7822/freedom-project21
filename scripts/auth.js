@@ -1,7 +1,8 @@
 // listen for authentication status changes
 auth.onAuthStateChanged(user => {
   if (user) {
-    db.collection('guides').get().then(snapshot => {
+    db.collection('guides').onSnapshot(snapshot => {
+      //everytime there is a change in the date base the code below runs and we receive an updated snapshot
       setupGuides(snapshot.docs);
       setupUI(user);
     });
