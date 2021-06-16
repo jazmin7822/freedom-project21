@@ -11,6 +11,28 @@ auth.onAuthStateChanged(user => {
   }
 })
 
+// Grabs a reference to the create form id <form id="create-form">
+//creates new log
+const createForm = document.querySelector('#create-form');
+//when the submit the form execute this
+createForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  //how does the database record what the user inputs?
+  // We have to interact with the Data Base
+  db.collection('guides').add({
+    //pass in a object, the title of the guide, and the content
+    //get a handle in the individual input field.
+    title: createForm['title'].value,
+    content: createForm['content'].value
+  }).then(() => {
+    //clear the form and close the modal after the user has typed in
+    const modal = document.querySelector('#modal-create');
+    M.Modal.getInstance(modal).close();
+    createForm.reset();
+  })
+})
+
+
 // this is how the user signs ups
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
