@@ -32,7 +32,7 @@ const setupGuides = (data) => {
     });
     guideList.innerHTML = html
   } else {
-    guideList.innerHTML = '<h6 class="center-align">Cups of Water</h6>';
+    guideList.innerHTML = '<h6 class="center-align">Login or Sign up to log how many cups of water you drink per day</h6>';
   }
 
 
