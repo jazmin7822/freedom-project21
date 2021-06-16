@@ -32,7 +32,7 @@ const setupGuides = (data) => {
     });
     guideList.innerHTML = html
   } else {
-    guideList.innerHTML = '<h6 class="center-align">Login or Sign up to log how many cups of water you drink per day☺</h6>';
+    guideList.innerHTML = '<h6 class="center-align teal-text">Login or Sign up to log how many cups of water you drink per day☺</h6>';
     //added code
     // guideList.innerHTML = '<section class="Form my-4 mx-5"> <div class="container"> <div class ="row no-gutters"> <div class="col-lg-5"><img src="img/Person-drinking-water.png" class="img-fluid" alt="Person drinking water"></div></div></div></section>';
 
