@@ -15,7 +15,7 @@ const setupUI = (user) => {
   }
 };
 
-// setup guides
+// setup log forms to input the day and amount of water drank that day
 const setupGuides = (data) => {
 
   if (data.length) {
@@ -35,11 +35,7 @@ const setupGuides = (data) => {
     guideList.innerHTML = '<h6 class="center-align teal-text">Login or Sign up to log how many cups of water you drink per day☺</h6>';
     //added code
     // guideList.innerHTML = '<section class="Form my-4 mx-5"> <div class="container"> <div class ="row no-gutters"> <div class="col-lg-5"><img src="img/Person-drinking-water.png" class="img-fluid" alt="Person drinking water"></div></div></div></section>';
-
-
   }
-
-
 };
 
 // setup materialize components
